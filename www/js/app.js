@@ -1,7 +1,19 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('starter', ['ionic', 'ngSanitize'])
 
-.controller('AppCtrl', function($scope, $ionicActionSheet) {
+.controller('AppCtrl', function($scope, $http, $ionicActionSheet, $sce) {
   
+    $scope.posts = [];
+
+  $http.get('http://teachthemtocode.com/wp-json/posts?filter%5Borderby%5D=rand&filter%5Bposts_per_page%5D=1callback=?').
+    success(function(data, status, json, config) {
+      $scope.posts = data;
+      console.log(data[0].title);
+      var title = data[0].title;
+
+
+
+
+
   $scope.showActionsheet = function() {
     
     $ionicActionSheet.show({
@@ -25,7 +37,21 @@ angular.module('ionicApp', ['ionic'])
       }
     });
   };
+    
+
+//sanitising html
+        $scope.myTitle = data[0].title;
+      
+        $scope.snippet = data[0].content;
+    
+
+      console.log(data.title);
+      console.log(title);
+      console.log("got data");
+    }).
+    error(function(data, status, headers, config) {
+      console.log("can't connect!")
+      // log error
+    });
+    
 });
-
-
-
