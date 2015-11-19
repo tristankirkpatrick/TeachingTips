@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ionicApp">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, scroll='false'">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, scroll=&apos;false&apos;">
     <title></title>
 
 
@@ -19,32 +19,56 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
-  <body ng-app="starter">
-
+  <body ng-controller="AppCtrl">
+  
+  <fake-statusbar></fake-statusbar>
+  
   <ion-pane>
 
-  <ion-content class="padding">
   
+    <ion-header-bar class="bar bar-dark">
+      <h1 class="title">Teacher Tip of the Day</h1>
+    </ion-header-bar>
+
+
+  <ion-content class="padding">
+
+
+
+
   <div class="tip">
-  <div class="item item-avatar item-trns item-text-wrap">
-    <img src="img/mark.jpg">
-    <h2>Exit tickets and ‘keep, grow, change’ templates</h2>
-    <p>Mark Anderson</p>
+  <div class="text-center">
+    <h1>Exit tickets and &#x2018;keep, grow, change&#x2019; templates</h1>
+    <div class="item-avatar center item-text-center"><img src="img/mark.jpg"></div>
+
+    <p>Today's tip is by<strong> Mark Anderson</strong></p>
+
   </div>
 
-  <div class="item item-image item-trns tipimage">
-    <img src="http://ictevangelist.com/wp-content/uploads/2014/03/Exit-Ticket-560x350.png" height="20%">
-  </div>
+  <div class="item item-image postimg">
+      
+    <img src="img/classroom-shot.jpg">
 
-  <div class="item item-text item-trns item-text-wrap">
-    <h3>Exit tickets and ‘keep, grow, change’ templates</h3>
-    <p>One of the things that I like to do with my classes involves giving them an exit ticket at the end of the lesson. </p>
-   </div>
+    </div>
 
-  <a class="item item-icon-left item-assertive" href="#">
-    <i class="ion-social-twitter"></i>
-    Share this tip with other educators
-  </a>
+  <div class="maintext item item-text-wrap">
+    
+
+        <p>One of the things that I like to do with my classes involves giving them an exit ticket at the end of the lesson. You can use exit tickets for a variety of uses:</p>
+
+        <p>You can do exit tickets electronically in other ways too using&#xA0;<a href="http://www.socrative.com/">Socrative</a>. I&apos;ve blogged about Socrative before so won&#x2019;t go in to any more detail here.</p>
+
+        <p>Something else I like to do to is use something I inherited from my time at Clevedon (I think from&#xA0;<a href="http://twitter.com/thelazyteacher">@thelazyteacher</a>) but it could have been someone else, is a thing called &#x2018;Keep, Grow, Change&#x2019;. I&#x2019;ve used it in many ways, particularly in review of my classes, units of work and when querying students about the work of the whole department. It basically works on this premise. What do you want to keep? What do you want to change? What do you want to grow? You can use this in lessons too:</p>
+
+
+      </div>
+  
+
+
+
+ <button class="button button-full button-positive" ng-click="showActionsheet()">
+        Share the Tip!
+      </button>
 
 </div>
     </ion-content>
