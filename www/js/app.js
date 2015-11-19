@@ -17,12 +17,11 @@ angular.module('starter', ['ionic', 'ngSanitize'])
   $scope.showActionsheet = function() {
     
     $ionicActionSheet.show({
-      titleText: 'ActionSheet Example',
+      titleText: 'Share this tip with fellow educators.',
       buttons: [
-        { text: '<i class="icon ion-share"></i> Share' },
-        { text: '<i class="icon ion-arrow-move"></i> Move' },
+        { text: '<i class="icon ion-share"></i> Share on Twitter' },
+        { text: '<i class="icon ion-arrow-move"></i> Add to Pinterest' },
       ],
-      destructiveText: 'Delete',
       cancelText: 'Cancel',
       cancel: function() {
         console.log('CANCELLED');
